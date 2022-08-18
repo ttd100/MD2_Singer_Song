@@ -2,6 +2,7 @@ package rikkei.academy.view;
 
 import rikkei.academy.config.Config;
 import rikkei.academy.view.singer.ViewSinger;
+import rikkei.academy.view.singer.ViewSong;
 
 public class Main {
     public Main(){
@@ -14,7 +15,7 @@ public class Main {
                 new ViewSinger();
                 break;
             case 2:
-                System.out.println("vao song chua");
+                new ViewSong();
                 break;
         }
     }

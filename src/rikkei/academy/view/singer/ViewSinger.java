@@ -57,13 +57,15 @@ public class ViewSinger {
             int age = Config.scanner().nextInt();
             Singer singer = new Singer(idSinger, name, age);
             singerController.createSinger(singer);
-            System.out.println("check list ---->" + singerController.showListSinger());
-            System.out.println("nhập phím bất kì để tiếp tục - nhập  vào quit để thoát");
-            String backMenu = Config.scanner().nextLine();
-            if (backMenu.equalsIgnoreCase("quit")) {
-                new ViewSinger();
-                break;
-            }
+            System.out.println("create success" );
+            singerController.showListSinger();
+//            System.out.println("check list ---->" + singerController.showListSinger());
+//            System.out.println("nhập phím bất kì để tiếp tục - nhập  vào quit để thoát");
+//            String backMenu = Config.scanner().nextLine();
+//            if (backMenu.equalsIgnoreCase("quit")) {
+//                new ViewSinger();
+//                break;
+//            }
 
         }
     }
@@ -119,7 +121,8 @@ public class ViewSinger {
             Singer newSinger = new Singer(newName,newAge);
             singerController.updateSinger(idSinger,newSinger);
             System.out.println("Edit success");
-            System.out.println("check list ---->" + singerController.showListSinger());
+            singerController.showListSinger();
+//            System.out.println("check list ---->" + singerController.showListSinger());
         } System.out.println("nhập vào quit để thoát");
         String backMenu = Config.scanner().nextLine();
         if (backMenu.equalsIgnoreCase("quit")) {
@@ -133,11 +136,12 @@ public class ViewSinger {
             System.out.println("không tồn tại");
         }else {
             System.out.println("nhập 1 để xóa - nhập 2 không xóa");
-            int chooDelete = Config.scanner().nextInt();
-            switch (chooDelete){
+            int chooseDelete = Config.scanner().nextInt();
+            switch (chooseDelete){
                 case 1:
                     singerController.deleteSinger(idSinger);
                     formShowListSinger();
+                    singerController.showListSinger();
                     break;
                 case 2:
                     new ViewSinger();

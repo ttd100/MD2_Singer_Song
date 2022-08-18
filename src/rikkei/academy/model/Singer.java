@@ -1,6 +1,8 @@
 package rikkei.academy.model;
 
-public class Singer implements Comparable<Singer> {
+import java.io.Serializable;
+
+public class Singer implements Comparable<Singer>, Serializable {
     private int id;
     private String name;
     private int age;
